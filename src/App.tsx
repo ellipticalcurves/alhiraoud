@@ -1,122 +1,93 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+
+import SplatBackground from './SplatBackground'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const products = [
+  {
+    number: '01',
+    name: 'Signature Oud',
+    description: 'A rich, warm fragrance inspired by traditional oud.',
+    price: '£65',
+  },
+  {
+    number: '02',
+    name: 'Amber Essence',
+    description: 'Warm amber notes with a refined, lasting finish.',
+    price: '£45',
+  },
+  {
+    number: '03',
+    name: 'The Collection',
+    description: 'Discover the Al Hira Oud collection.',
+    price: 'Explore',
+  },
+]
 
+export default function App() {
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      <SplatBackground />
 
-      <div className="ticks"></div>
+      <div className="site-content">
+        <header className="site-header">
+          <a className="brand" href="#home">AL HIRA OUD</a>
+          <nav>
+            <a href="#story">Our Story</a>
+            <a href="#collection">Collection</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </header>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        <main>
+          <section className="hero" id="home">
+            <p className="eyebrow">THE ART OF FRAGRANCE</p>
+            <h1>Discover the world of Oud.</h1>
+            <p className="hero-copy">
+              An invitation to explore fragrance, craftsmanship and tradition.
+            </p>
+            <a className="gold-button" href="#story">Enter the experience</a>
+            <span className="scroll-note">SCROLL TO EXPLORE ↓</span>
+          </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+          <section className="content-section" id="story">
+            <p className="eyebrow">OUR PHILOSOPHY</p>
+            <h2>Tradition meets refinement.</h2>
+            <p>
+              Explore Al Hira Oud through an immersive journey into our
+              world of fragrance and carefully selected pieces.
+            </p>
+          </section>
+
+          <section className="content-section collection" id="collection">
+            <p className="eyebrow">DISCOVER</p>
+            <h2>Selected for you.</h2>
+
+            <div className="product-list">
+              {products.map((product) => (
+                <article className="product" key={product.number}>
+                  <span className="product-number">{product.number}</span>
+                  <div>
+                    <h3>{product.name}</h3>
+                    <p>{product.description}</p>
+                  </div>
+                  <span className="product-price">{product.price}</span>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="closing" id="contact">
+            <p className="eyebrow">AL HIRA OUD</p>
+            <h2>A world worth discovering.</h2>
+            <a className="gold-button" href="#home">Return to the entrance ↑</a>
+          </section>
+        </main>
+
+        <footer>
+          <span>AL HIRA OUD</span>
+          <span>Fragrance. Heritage. Craft.</span>
+        </footer>
+      </div>
     </>
   )
 }
-
-export default App
