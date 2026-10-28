@@ -77,11 +77,11 @@ function getPose(path: Pose[], progress: number): Pose {
 export default function SplatBackground() {
   const hostRef = useRef<HTMLDivElement>(null)
   const cameraRef = useRef<Entity | null>(null)
-  const modeRef = useRef(true)
+  const modeRef = useRef(false)
   const speedRef = useRef(1.2)
   const sensitivityRef = useRef(0.15)
 
-  const [positionMode, setPositionMode] = useState(true)
+  const [positionMode, setPositionMode] = useState(false)
   const [controlsOpen, setControlsOpen] = useState(false)
   const [speed, setSpeed] = useState(1.2)
   const [sensitivity, setSensitivity] = useState(0.15)
