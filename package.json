@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@fontsource/jost": "^5.3.0",
+    "lucide-react": "^1.63.0",
+    "motion": "^14.7.1",
     "playcanvas": "^2.23.3",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"

@@ -35,13 +35,13 @@ const DESKTOP_PATH: Pose[] = [
   { at: 0.76, position: [-0.526, 0.219, 0.065], rotation: [141.05, -89.44, 180] },
 
   // Jubbah — transition after the rings
-  { at: 0.85, position: [0.173, 0.307, 0.112], rotation: [172.24, -81.04, 180] },
+  { at: 0.85, position: [0.256, 0.358, 0.03], rotation: [170.36, -24.56, 180] },
 
   // Pan across the jubbah
-  { at: 0.93, position: [0.256, 0.358, 0.03], rotation: [170.36, -24.56, 180] },
+  { at: 0.93, position: [0.173, 0.307, 0.112], rotation: [172.24, -81.04, 180]},
 
   // Hold the final view until the end
-  { at: 1, position: [0.256, 0.358, 0.03], rotation: [170.36, -24.56, 180] },
+  { at: 1, position: [0.173, 0.307, 0.112], rotation: [172.24, -81.04, 180] },
 ]
 
 const MOBILE_PATH: Pose[] = [
